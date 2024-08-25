@@ -21,7 +21,8 @@ class PostFactory extends Factory
             'user_id' => User::factory(),
             'title' => str(fake()->sentence())->beforeLast('.')->title(),
             'body' => fake()->realText(600),
-            'views' => fake()->numberBetween(0, 1000),
+            'likes' => fake()->numberBetween(0, 1000),
+            'dislikes' => fake()->numberBetween(0, 100),
         ];
     }
 }
