@@ -16,7 +16,7 @@ type RegisterForm = {
     password_confirmation: string;
 };
 
-export default function Register() {
+export default function Register({ status }: { status?: string }) {
     const { data, setData, post, processing, errors, reset } = useForm<Required<RegisterForm>>({
         name: '',
         email: '',
@@ -34,6 +34,11 @@ export default function Register() {
     return (
         <AuthLayout title="Create an account" description="Enter your details below to create your account">
             <Head title="Register" />
+
+            {status === 'registration-blocked' && (
+                <div className="mb-4 text-center text-sm font-medium text-red-600">Registration is currently closed to the public.</div>
+            )}
+
             <form className="flex flex-col gap-6" onSubmit={submit}>
                 <div className="grid gap-6">
                     <div className="grid gap-2">
