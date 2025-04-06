@@ -17,6 +17,34 @@ The following instructions are applicable if you are running [Herd](https://herd
 5. Run `php artisan migrate --seed`
 6. Run `npm install`, then `npm run build`
 
+## Database Management
+
+### Seeding the Database
+
+The database seeder will create:
+- An admin user (email: admin@example.com, password: password)
+- A test user (email: test@example.com)
+- 8 predefined categories (Technology, Science, Health, etc.)
+- 28 sample articles:
+  - 20 published articles
+  - 5 draft articles
+  - 3 archived articles
+
+To seed the database:
+```bash
+php artisan db:seed
+```
+
+To refresh the database (clear all data) and re-seed:
+```bash
+php artisan migrate:fresh --seed
+```
+
+To only clear the database without seeding:
+```bash
+php artisan migrate:fresh
+```
+
 ## Changelog
 
 - Upgrade to Laravel 12 and new starter kit. Deploy on cloud.laravel.com
