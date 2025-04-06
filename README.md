@@ -16,3 +16,7 @@ The following instructions are applicable if you are running [Herd](https://herd
   - `CREATE DATABASE jaredkc_hub;`
 5. Run `php artisan migrate --seed`
 6. Run `npm install`, then `npm run build`
+
+## Changelog
+
+- Upgrade to Laravel 12 and new starter kit. Deploy on cloud.laravel.com
