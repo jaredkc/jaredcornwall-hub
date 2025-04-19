@@ -4,8 +4,16 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('welcome');
+    return Inertia::render('index');
 })->name('home');
+
+Route::get('articles/index', function () {
+    return Inertia::render('articles');
+})->name('articles.index');
+
+Route::get('welcome', function () {
+    return Inertia::render('welcome');
+})->name('welcome');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
